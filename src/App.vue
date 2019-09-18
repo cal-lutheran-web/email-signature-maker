@@ -36,13 +36,27 @@ export default {
 				department: 'Department (optional)',
 				mail_code: 'XXXX',
 				phone: 'XXXX',
-				fax: 'XXXX'
+				fax: 'XXXX',
+				pronouns_display: '',
+				pronouns: '',
+				pronouns_custom: ''
 			}
 		}
 	},
 	components: {
 		FormFields,
 		Sig
+	},
+	watch: {
+		'formData.pronouns': function(data){
+			if(data !== 'custom'){
+				this.formData.pronouns_display = data;
+				//Vue.set(this,'formData.pronouns_display',data);
+			}
+		},
+		'formData.pronouns_custom': function(data){
+			this.formData.pronouns_display = data;
+		}
 	}
 }
 
@@ -56,6 +70,14 @@ export default {
 
 	.form-item {
 		margin-bottom: 1rem;
+	}
+
+	.form-item label {
+		display: block;
+	}
+
+	.form-item select {
+		width: 100%;
 	}
 
 </style>

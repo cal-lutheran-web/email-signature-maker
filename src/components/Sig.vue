@@ -2,6 +2,7 @@
 <div class="sig">
 	<p style="padding: 0; font-size: 12px; line-height: 15px; font-family: Verdana; color: #3b2360; margin: 0 0 15px 0;">
 			<b>{{ formData.name }}</b><br>
+			<span v-if="formData.pronouns"><strong>Pronouns:</strong> {{ formData.pronouns_display }}<br /></span>
 			<i>{{ formData.title }}<br>
 			<span v-if="formData.department">{{ formData.department }}</span></i>
 		</p>

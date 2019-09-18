@@ -8,12 +8,13 @@
     <div class="form-item">
       <label for="pronouns">Pronouns</label>
       <select id="pronouns" v-model="formData.pronouns">
+		  <option></option>
         <option value="he/him/his">He/Him/His</option>
         <option value="she/her/hers">She/Her/Hers</option>
         <option value="they/them/theirs">They/Them/Theirs</option>
         <option value="custom">Custom</option>
       </select>
-      <input v-model="formData.pronouns" type="text" v-if="formData.pronouns == 'custom'" />
+      <input v-model="formData.pronouns_custom" type="text" v-if="formData.pronouns == 'custom'" />
     </div>
 
     <div class="form-item">
