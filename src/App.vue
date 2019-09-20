@@ -1,5 +1,4 @@
 <template>
-	
 	<div class="container page-content">
 		<header class="row">
 			<div class="col-sm-12">
@@ -11,55 +10,54 @@
 				<FormFields :formData="formData" />
 			</div>
 			<div class="col-sm-6">
-
 				<Sig :formData="formData" />
-
 			</div>
 		</div>
 	</div>
-
 </template>
 
 
 <script>
+	import Vue from "vue";
+	import FormFields from "./components/FormFields.vue";
+	import Sig from "./components/Sig.vue";
 
-import Vue from "vue";
-import FormFields from "./components/FormFields.vue";
-import Sig from "./components/Sig.vue";
-
-export default {
-	data(){
-		return {
-			formData: {
-				name: 'First Last',
-				title: 'Title',
-				department: 'Department (optional)',
-				mail_code: 'XXXX',
-				phone: 'XXXX',
-				fax: 'XXXX',
-				pronouns_display: '',
-				pronouns: '',
-				pronouns_custom: ''
-			}
-		}
-	},
-	components: {
-		FormFields,
-		Sig
-	},
-	watch: {
-		'formData.pronouns': function(data){
-			if(data !== 'custom'){
-				this.formData.pronouns_display = data;
-				//Vue.set(this,'formData.pronouns_display',data);
-			}
+	export default {
+		data() {
+			return {
+				formData: {
+					name: "",
+					title: "",
+					department: "",
+					mail_code: "",
+					phone: "",
+					fax: "",
+					pronouns_display: "",
+					pronouns: "",
+					pronouns_custom: "",
+					logo: "callutheran",
+					logos: {
+						callutheran:
+							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-default-signature.png",
+						som:
+							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-som-signature.png",
+						coas:
+							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-coas-signature.png",
+						gsoe:
+							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-gsoe-signature.png",
+						gsop:
+							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-gsop-signature.png",
+						pros:
+							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-professionals-signature.png"
+					}
+				}
+			};
 		},
-		'formData.pronouns_custom': function(data){
-			this.formData.pronouns_display = data;
+		components: {
+			FormFields,
+			Sig
 		}
-	}
-}
-
+	};
 </script>
 
 
@@ -79,5 +77,4 @@ export default {
 	.form-item select {
 		width: 100%;
 	}
-
 </style>
