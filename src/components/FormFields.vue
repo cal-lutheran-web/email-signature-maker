@@ -1,57 +1,156 @@
 <template>
-  <form class="form-fields">
-    <div class="form-item">
-      <label for="name">Name</label>
-      <input v-model="formData.name" type="text" required />
-    </div>
+	<form class="form-fields">
+		<fieldset name="basic-info">
+			<legend><span>Basic Info</span></legend>
 
-    <div class="form-item">
-      <label for="pronouns">Pronouns</label>
-      <select id="pronouns" v-model="formData.pronouns">
-		  <option></option>
-        <option value="he/him/his">He/Him/His</option>
-        <option value="she/her/hers">She/Her/Hers</option>
-        <option value="they/them/theirs">They/Them/Theirs</option>
-        <option value="custom">Custom</option>
-      </select>
-      <input v-model="formData.pronouns_custom" type="text" v-if="formData.pronouns == 'custom'" />
-    </div>
+			<div class="form-item">
+				<label for="name">Name</label>
+				<input v-model="formData.name" type="text" required />
+			</div>
 
-    <div class="form-item">
-      <label for="title">Title</label>
-      <input v-model="formData.title" type="text" required />
-    </div>
+			<div class="form-item">
+				<label for="pronouns">Pronouns</label>
+				<select id="pronouns" v-model="formData.pronouns">
+					<option></option>
+					<option value="he/him/his">He/Him/His</option>
+					<option value="she/her/hers">She/Her/Hers</option>
+					<option value="they/them/theirs">They/Them/Theirs</option>
+					<option value="custom">Custom</option>
+				</select>
+			</div>
 
-    <div class="form-item">
-      <label for="department">Department</label>
-      <input v-model="formData.department" type="text" />
-    </div>
+			<div class="form-item" v-if="formData.pronouns == 'custom'">
+				<label for="pronouns-custom">Custom Pronouns</label>
+				<input v-model="formData.pronouns_custom" type="text" />
+			</div>
 
-    <div class="form-item">
-      <label for="mail_code">Mail Code</label>
-      <input v-model="formData.mail_code" type="text" />
-    </div>
+			<div class="form-item">
+				<label for="title">Title</label>
+				<input v-model="formData.title" type="text" required />
+			</div>
 
-    <div class="form-item">
-      <label for="phone">Phone</label>
-      <input v-model="formData.phone" type="text" />
-    </div>
+		</fieldset>
 
-    <div class="form-item">
-      <label for="fax">Fax</label>
-      <input v-model="formData.fax" type="text" />
-    </div>
-  </form>
+
+		<fieldset name="department-info">
+			<legend><span>Department Info</span></legend>
+
+			<div class="form-item">
+				<label for="department">Department</label>
+				<input v-model="formData.department" type="text" />
+			</div>
+
+			<div class="form-item">
+				<label for="website">Website</label>
+				<input v-model="formData.website" type="text" />
+			</div>
+
+			<div class="form-item">
+				<label for="logo">Logo</label>
+				<select v-model="formData.logo" id="logo">
+					<option value="callutheran" selected="true">Cal Lutheran</option>
+					<option value="coas">College of Arts &amp; Sciences</option>
+					<option value="som">School of Management</option>
+					<option value="gsoe">Graduate School of Education</option>
+					<option value="gsop">Graduate School of Psychology</option>
+					<option value="pros">Bachelor's Degree for Professionals</option>
+				</select>
+			</div>
+
+		</fieldset>
+
+		<fieldset name="contact-info">
+			<legend><span>Contact Info</span></legend>
+		
+			<div class="form-item">
+				<label for="mail_code">Mail Code</label>
+				<input v-model="formData.mail_code" type="text" />
+			</div>
+
+			<div class="form-item">
+				<label for="phone">Phone</label>
+				<input v-model="formData.phone" type="text" />
+			</div>
+
+			<div class="form-item">
+				<label for="fax">Fax</label>
+				<input v-model="formData.fax" type="text" />
+			</div>
+		</fieldset>
+
+		<fieldset name="social-media-info">
+			<legend>Social Media Info</legend>
+
+			<div class="form-item">
+				<label for="facebook">Facebook</label>
+				<input v-model="formData.facebook" type="text" />
+			</div>
+
+			<div class="form-item">
+				<label for="twitter">Twitter</label>
+				<input v-model="formData.twitter" type="text" />
+			</div>
+
+			<div class="form-item">
+				<label for="instagram">Instagram</label>
+				<input v-model="formData.instagram" type="text" />
+			</div>
+
+			<div class="form-item">
+				<label for="linkedin">LinkedIn</label>
+				<input v-model="formData.linkedin" type="text" />
+			</div>
+
+
+		</fieldset>
+	</form>
 </template>
 
 <script>
-import Vue from "vue";
+	import Vue from "vue";
 
-export default {
-	name: 'FormFields',
-	props: ['formData']
-};
+	export default {
+		name: "FormFields",
+		props: ["formData"],
+		watch: {
+			"formData.pronouns": function(data) {
+				if (data == "custom") {
+					this.formData.pronouns_display = this.formData.pronouns_custom;
+				} else {
+					this.formData.pronouns_display = data;
+				}
+			},
+			"formData.pronouns_custom": function(data) {
+				this.formData.pronouns_display = data;
+			}
+		}
+	};
 </script>
 
 <style>
+	fieldset {
+		border: 0;
+		margin: 0 0 2rem 0;
+		padding: 1rem;
+		position: static;
+		background-color: #aadff1;
+	}
+
+	legend {
+		display: block;
+		box-sizing: content-box;
+		position: static;
+		width: 100%;
+		margin: 0 -1rem;
+		font-family: "Tungsten", Impact, sans-serif;
+		font-size: 30px;
+		color: white;
+		background: #1e5989;
+		padding: 0.5rem 1rem;
+		font-weight: normal;
+	}
+
+	legend span {
+		display: block;
+	}
 </style>
