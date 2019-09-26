@@ -5,7 +5,7 @@
 
 			<div class="form-item">
 				<label for="name">Name</label>
-				<input v-model="formData.name" type="text" required />
+				<input v-model="formData.name" type="text" />
 			</div>
 
 			<div class="form-item">
@@ -26,7 +26,7 @@
 
 			<div class="form-item">
 				<label for="title">Title</label>
-				<input v-model="formData.title" type="text" required />
+				<input v-model="formData.title" type="text" />
 			</div>
 
 		</fieldset>
@@ -81,24 +81,29 @@
 		<fieldset name="social-media-info">
 			<legend>Social Media Info</legend>
 
-			<div class="form-item">
+			<div class="form-item form-item-inline">
+				<label for="social-media">Show Social Media Icons</label>
+				<input id="social-media" type="checkbox" v-model="formData.social_media_display" />
+			</div>
+
+			<div class="form-item" v-if="formData.social_media_display">
 				<label for="facebook">Facebook</label>
-				<input v-model="formData.facebook" type="text" />
+				<input v-model="formData.social_media.facebook" type="text" />
 			</div>
 
-			<div class="form-item">
+			<div class="form-item" v-if="formData.social_media_display">
 				<label for="twitter">Twitter</label>
-				<input v-model="formData.twitter" type="text" />
+				<input v-model="formData.social_media.twitter" type="text" />
 			</div>
 
-			<div class="form-item">
+			<div class="form-item" v-if="formData.social_media_display">
 				<label for="instagram">Instagram</label>
-				<input v-model="formData.instagram" type="text" />
+				<input v-model="formData.social_media.instagram" type="text" />
 			</div>
 
-			<div class="form-item">
-				<label for="linkedin">LinkedIn</label>
-				<input v-model="formData.linkedin" type="text" />
+			<div class="form-item" v-if="formData.social_media_display">
+				<label for="youtube">YouTube</label>
+				<input v-model="formData.social_media.youtube" type="text" />
 			</div>
 
 
@@ -112,6 +117,11 @@
 	export default {
 		name: "FormFields",
 		props: ["formData"],
+		data() {
+			return {
+				social_media_display: false
+			};
+		},
 		watch: {
 			"formData.pronouns": function(data) {
 				if (data == "custom") {
@@ -128,6 +138,28 @@
 </script>
 
 <style>
+	.form-item {
+		margin-bottom: 1rem;
+	}
+
+	.form-item label {
+		display: block;
+	}
+
+	.form-item select {
+		width: 100%;
+	}
+
+	.form-item-inline {
+		display: flex;
+	}
+
+	.form-item-inline label {
+		display: inline-block;
+		margin-left: 1ch;
+		order: 2;
+	}
+
 	fieldset {
 		border: 0;
 		margin: 0 0 2rem 0;
