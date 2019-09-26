@@ -1,17 +1,10 @@
 <template>
-	<div class="container page-content">
-		<header class="row">
-			<div class="col-sm-12">
-				<h1 class="section-title">Email Signature Maker</h1>
-			</div>
-		</header>
-		<div class="row">
-			<div class="col-sm-6">
-				<FormFields :formData="formData" />
-			</div>
-			<div class="col-sm-6">
-				<Sig :formData="formData" />
-			</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<FormFields :formData="formData" />
+		</div>
+		<div class="col-sm-6">
+			<Sig :formData="formData" />
 		</div>
 	</div>
 </template>
@@ -49,6 +42,13 @@
 							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-gsop-signature.png",
 						pros:
 							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-professionals-signature.png"
+					},
+					social_media_display: false,
+					social_media: {
+						facebook: "https://www.facebook.com/callutheran",
+						instagram: "https://www.instagram.com/callutheran/",
+						youtube: "https://youtube.com/callutheran",
+						twitter: "https://twitter.com/callutheran"
 					}
 				}
 			};
@@ -64,17 +64,5 @@
 <style>
 	.page-content {
 		margin-top: 3rem;
-	}
-
-	.form-item {
-		margin-bottom: 1rem;
-	}
-
-	.form-item label {
-		display: block;
-	}
-
-	.form-item select {
-		width: 100%;
 	}
 </style>
