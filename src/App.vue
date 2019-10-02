@@ -3,7 +3,7 @@
 		<div class="col-sm-6">
 			<FormFields :formData="formData" />
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-6 sig-area">
 			<Sig :formData="formData" />
 		</div>
 	</div>
@@ -25,6 +25,7 @@
 					mail_code: "",
 					phone: "",
 					fax: "",
+					website: "",
 					pronouns_display: "",
 					pronouns: "",
 					pronouns_custom: "",
@@ -41,7 +42,9 @@
 						gsop:
 							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-gsop-signature.png",
 						pros:
-							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-professionals-signature.png"
+							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-professionals-signature.png",
+						plts:
+							"https://www.callutheran.edu/offices/marketing/brand/email/images/plts.png"
 					},
 					social_media_display: false,
 					social_media: {
@@ -64,5 +67,10 @@
 <style>
 	.page-content {
 		margin-top: 3rem;
+	}
+
+	.sig-area {
+		position: sticky;
+		top: 25%;
 	}
 </style>

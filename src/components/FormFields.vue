@@ -9,6 +9,11 @@
 			</div>
 
 			<div class="form-item">
+				<label for="title">Title</label>
+				<input v-model="formData.title" type="text" />
+			</div>
+
+			<div class="form-item">
 				<label for="pronouns">Pronouns</label>
 				<select id="pronouns" v-model="formData.pronouns">
 					<option></option>
@@ -24,11 +29,6 @@
 				<input v-model="formData.pronouns_custom" type="text" />
 			</div>
 
-			<div class="form-item">
-				<label for="title">Title</label>
-				<input v-model="formData.title" type="text" />
-			</div>
-
 		</fieldset>
 
 
@@ -42,7 +42,7 @@
 
 			<div class="form-item">
 				<label for="website">Website</label>
-				<input v-model="formData.website" type="text" />
+				<div class="form-label-prefix"><p>CalLutheran.edu/</p> <input v-model="formData.website" type="text" /></div>
 			</div>
 
 			<div class="form-item">
@@ -54,6 +54,7 @@
 					<option value="gsoe">Graduate School of Education</option>
 					<option value="gsop">Graduate School of Psychology</option>
 					<option value="pros">Bachelor's Degree for Professionals</option>
+					<option value="plts">Pacific Lutheran Theological Seminary</option>
 				</select>
 			</div>
 
@@ -146,7 +147,8 @@
 		display: block;
 	}
 
-	.form-item select {
+	.form-item select,
+	.form-item input[type="text"] {
 		width: 100%;
 	}
 
@@ -158,6 +160,14 @@
 		display: inline-block;
 		margin-left: 1ch;
 		order: 2;
+	}
+
+	.form-label-prefix {
+		display: flex;
+		align-items: center;
+	}
+	.form-label-prefix p {
+		padding: 0 1ch 0 0;
 	}
 
 	fieldset {
