@@ -17,9 +17,9 @@
 				<label for="pronouns">Pronouns</label>
 				<select id="pronouns" v-model="formData.pronouns">
 					<option></option>
-					<option value="he/him/his">He/Him/His</option>
-					<option value="she/her/hers">She/Her/Hers</option>
-					<option value="they/them/theirs">They/Them/Theirs</option>
+					<option value="He/Him/His">He/Him/His</option>
+					<option value="She/Her/Hers">She/Her/Hers</option>
+					<option value="They/Them/Theirs">They/Them/Theirs</option>
 					<option value="custom">Custom</option>
 				</select>
 			</div>
@@ -42,7 +42,11 @@
 
 			<div class="form-item">
 				<label for="website">Website</label>
-				<div class="form-label-prefix"><p>CalLutheran.edu/</p> <input v-model="formData.website" type="text" /></div>
+				<div class="form-label-prefix">
+					<p v-if="formData.logo !== 'plts'">CalLutheran.edu/</p>
+					<p v-if="formData.logo == 'plts'">PLTS.edu/</p> 
+					<input v-model="formData.website" type="text" />
+				</div>
 			</div>
 
 			<div class="form-item">
@@ -70,12 +74,12 @@
 
 			<div class="form-item">
 				<label for="phone">Phone</label>
-				<input v-model="formData.phone" type="text" />
+				<input v-model="formData.phone" type="text" maxlength="4" />
 			</div>
 
 			<div class="form-item">
 				<label for="fax">Fax</label>
-				<input v-model="formData.fax" type="text" />
+				<input v-model="formData.fax" type="text" maxlength="4" />
 			</div>
 		</fieldset>
 

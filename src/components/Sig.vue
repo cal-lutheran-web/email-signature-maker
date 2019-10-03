@@ -1,23 +1,16 @@
 <template>
 	<div class="sig">
+
 		<p style="padding: 0; font-size: 12px; line-height: 15px; font-family: Verdana; color: #3b2360; margin: 0 0 15px 0;">
 			<b>{{ formData.name ? formData.name : "First Last" }}</b>
 			<br />
 			<i>
 				{{ formData.title ? formData.title : "Title" }}
-				<br />
-				<span v-if="formData.department">{{
-					formData.department
-				}}<br /></span>
-				<span v-if="formData.pronouns">
-					Pronouns: 
-					{{ formData.pronouns_display }}
-					<br />
-				</span>
+				<template v-if="formData.department"><br />{{ formData.department }}</template>
+				<template v-if="formData.pronouns"><br />Pronouns: {{ formData.pronouns_display }}</template>
 			</i>
 			
 		</p>
-
 
 		<img
 			:src="formData.logos[formData.logo]"
@@ -36,17 +29,17 @@
 		/>
 
 		<p style="padding: 0; font-size: 10px; line-height: 14px; font-family: Verdana; color: #777777; margin: 8px 0 0 0;" >
-			<span v-if="formData.logo == 'plts'">
+			<template v-if="formData.logo == 'plts'">
 				2000 Center Street, Suite 200 Berkeley, CA 94704
-			</span>
+			</template>
 
-			<span v-else>
-				60 West Olsen Road <span v-if="formData.mail_code">#{{ formData.mail_code }}</span>&nbsp;|&nbsp; Thousand Oaks, CA 91360
-			</span>
+			<template v-else>
+				60 West Olsen Road <template v-if="formData.mail_code">#{{ formData.mail_code }}</template>&nbsp;|&nbsp;Thousand Oaks, CA 91360
+			</template>
 
 			<br v-if="formData.phone || formData.fax" />
-			<span v-if="formData.phone">Phone: (805) 493-{{ formData.phone ? formData.phone : "XXXX" }}</span>
-			<span v-if="formData.fax">&nbsp;|&nbsp; Fax: (805) 493-{{ formData.fax ? formData.fax : "XXXX" }}</span>
+				<template v-if="formData.phone">Phone: (805) 493-{{ formData.phone ? formData.phone : "XXXX" }}</template>
+				<template v-if="formData.fax">&nbsp;|&nbsp; Fax: (805) 493-{{ formData.fax ? formData.fax : "XXXX" }}</template>
 			<br />
 
 			<a :href="'https://www.callutheran.edu/' + formData.website" v-if="formData.logo !=='plts'">CalLutheran.edu{{ formData.website ? '/'+formData.website : '' }}</a>
@@ -54,16 +47,16 @@
 		</p>
 
 		<p v-if="formData.social_media_display" style="margin-top: 1em">
-			<a :href="formData.social_media.facebook">
+			<a :href="formData.social_media.facebook" v-if="formData.social_media.facebook">
 				<img src="https://www.callutheran.edu/offices/marketing/brand/email/images/facebook.png" width="24" height="24" />
 			</a>
-			<a :href="formData.social_media.instagram">
+			<a :href="formData.social_media.instagram" v-if="formData.social_media.instagram">
 				<img src="https://www.callutheran.edu/offices/marketing/brand/email/images/instagram.png" width="24" height="24" />
 			</a>
-			<a :href="formData.social_media.twitter">
+			<a :href="formData.social_media.twitter" v-if="formData.social_media.twitter">
 				<img src="https://www.callutheran.edu/offices/marketing/brand/email/images/twitter.png" width="24" height="24" />
 			</a>
-			<a :href="formData.social_media.youtube">
+			<a :href="formData.social_media.youtube" v-if="formData.social_media.youtube">
 				<img src="https://www.callutheran.edu/offices/marketing/brand/email/images/youtube.png" width="24" height="24" />
 			</a>
 		</p>
