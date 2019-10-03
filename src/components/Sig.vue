@@ -1,5 +1,5 @@
 <template>
-	<div class="sig">
+	<div id="signature-wrapper" class="sig" @click="toClipboard">
 
 		<p style="padding: 0; font-size: 12px; line-height: 15px; font-family: Verdana; color: #3b2360; margin: 0 0 15px 0;">
 			<b>{{ formData.name ? formData.name : "First Last" }}</b>
@@ -63,6 +63,28 @@
 	</div>
 </template>
 
+<style>
+	.sig {
+		padding: 2rem;
+		border: 1px solid #bfc5c9;
+		display: inline-block;
+		position: relative;
+	}
+
+	.sig::before {
+		content: "Select the Contents and Copy";
+		display: inline-block;
+		background: #bfc5c9;
+		color: white;
+		font-weight: bold;
+		padding: 0.25rem;
+		line-height: 1;
+		position: absolute;
+		top: calc(-1em + -0.5rem + -1px);
+		left: -1px;
+	}
+</style>
+
 <script>
 	import Vue from "vue";
 
@@ -81,11 +103,13 @@
 				var img = new Image();
 				img.src = this.formData.logos[this.formData.logo];
 				img.onload = function() {
-					console.log(this.width, this.height);
 					$this.logo_w = this.width;
 					$this.logo_h = this.height;
 				};
 			}
+		},
+		methods: {
+			toClipboard() {}
 		}
 	};
 </script>
