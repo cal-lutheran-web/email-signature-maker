@@ -23,9 +23,10 @@
 					title: "",
 					department: "",
 					mail_code: "",
-					phone: "",
-					fax: "",
 					website: "",
+					phone_1: {},
+					phone_2: {},
+					phone_3: {},
 					pronouns_display: "",
 					pronouns: "",
 					pronouns_custom: "",
@@ -72,5 +73,18 @@
 	.sig-area {
 		position: sticky;
 		top: 25%;
+	}
+
+	.sr-only {
+		border: 0;
+		clip: rect(1px, 1px, 1px, 1px);
+		clip-path: inset(50%);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute !important;
+		width: 1px;
+		word-wrap: normal !important;
 	}
 </style>

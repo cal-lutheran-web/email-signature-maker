@@ -35,13 +35,11 @@
 				</template>
 
 				<template v-else>
-					60 West Olsen Road <template v-if="formData.mail_code">#{{ formData.mail_code }}</template>&nbsp;|&nbsp;Thousand Oaks, CA 91360
+					60 West Olsen Road <template v-if="formData.mail_code">#{{ formData.mail_code }}</template>&nbsp;|&nbsp;Thousand Oaks, CA 91360<br />
 				</template>
 
-				<br v-if="formData.phone || formData.fax" />
-					<template v-if="formData.phone">Phone: (805) 493-{{ formData.phone ? formData.phone : "XXXX" }}</template>
-					<template v-if="formData.fax">&nbsp;|&nbsp; Fax: (805) 493-{{ formData.fax ? formData.fax : "XXXX" }}</template>
-				<br />
+				Phone: (805) 493-{{ formData.phone_1 ? formData.phone_1.number : '' }}<br />
+
 
 				<a :href="'https://www.callutheran.edu/' + formData.website" v-if="formData.logo !=='plts'">CalLutheran.edu{{ formData.website ? '/'+formData.website : '' }}</a>
 				<a :href="'https://www.plts.edu/' + formData.website" v-if="formData.logo == 'plts'">PLTS.edu{{ formData.website ? '/'+formData.website : '' }}</a>
@@ -121,8 +119,7 @@
 		},
 		methods: {
 			toClipboard() {
-				var sigArea = document.querySelector("#signature-content")
-					.innerHTML;
+				var sigArea = document.querySelector("#signature-content").innerHTML;
 
 				function listener(e) {
 					e.clipboardData.setData("text/html", sigArea);

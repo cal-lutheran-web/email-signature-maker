@@ -72,10 +72,10 @@
 				<input v-model="formData.mail_code" type="text" />
 			</div>
 
-			<div class="form-item">
-				<label for="phone">Phone</label>
-				<input v-model="formData.phone" type="text" maxlength="4" />
-			</div>
+			<h3>Phone Numbers</h3>
+			<Phone :formData="formData" key="phone_1"></Phone>
+			<Phone :formData="formData" key="phone_2"></Phone>
+			<Phone :formData="formData" key="phone_3"></Phone>
 
 			<div class="form-item">
 				<label for="fax">Fax</label>
@@ -118,10 +118,14 @@
 
 <script>
 	import Vue from "vue";
+	import Phone from "./Phone.vue";
 
 	export default {
 		name: "FormFields",
 		props: ["formData"],
+		components: {
+			Phone
+		},
 		data() {
 			return {
 				social_media_display: false
@@ -181,6 +185,16 @@
 		position: static;
 		background-color: #aadff1;
 	}
+
+		fieldset h3 {
+			color: #333;
+			font-family: Raleway, sans-serif;
+			font-size: 1rem;
+			line-height: 1.5em;
+			margin: 0;
+			letter-spacing: normal;
+			font-weight: bold;
+		}
 
 	legend {
 		display: block;
