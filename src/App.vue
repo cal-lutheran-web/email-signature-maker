@@ -24,9 +24,10 @@
 					department: "",
 					mail_code: "",
 					website: "",
-					phone_1: {},
-					phone_2: {},
-					phone_3: {},
+					// phone_1: {},
+					// phone_2: {},
+					// phone_3: {},
+					phones: {},
 					pronouns_display: "",
 					pronouns: "",
 					pronouns_custom: "",
@@ -53,7 +54,29 @@
 						instagram: "https://www.instagram.com/callutheran/",
 						youtube: "https://youtube.com/callutheran",
 						twitter: "https://twitter.com/callutheran"
-					}
+					},
+					phoneTypes: {
+						clu_campus: {
+							label: 'Cal Lutheran Extension',
+							shortLabel: 'Office',
+							prefix: '805-493-'
+						},
+						plts_campus: {
+							label: 'PLTS Campus Extension',
+							shortLabel: 'Office',
+							prefix: '510-559-'
+						},
+						fax: {
+							label: 'Fax',
+							shortLabel: 'Fax',
+							prefix: ''
+						},
+						mobile: {
+							label: 'Mobile',
+							shortLabel: 'Mobile',
+							prefix: ''
+						}
+					},
 				}
 			};
 		},

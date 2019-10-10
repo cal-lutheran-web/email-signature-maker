@@ -38,8 +38,13 @@
 					60 West Olsen Road <template v-if="formData.mail_code">#{{ formData.mail_code }}</template>&nbsp;|&nbsp;Thousand Oaks, CA 91360<br />
 				</template>
 
-				Phone: (805) 493-{{ formData.phone_1 ? formData.phone_1.number : '' }}<br />
+				<template v-for="(phone, key) in formData.phones">
+					<template v-if="phone.label">
+						{{ formData.phoneTypes[phone.label].shortLabel }}: {{ formData.phoneTypes[phone.label].prefix + phone.number }}
+					</template>
+				</template>
 
+				<br />
 
 				<a :href="'https://www.callutheran.edu/' + formData.website" v-if="formData.logo !=='plts'">CalLutheran.edu{{ formData.website ? '/'+formData.website : '' }}</a>
 				<a :href="'https://www.plts.edu/' + formData.website" v-if="formData.logo == 'plts'">PLTS.edu{{ formData.website ? '/'+formData.website : '' }}</a>

@@ -1,15 +1,15 @@
 <template>
 	<div class="form-item">
-		<select v-model="changeLabel" class="form-select-small">
+		<select v-model="phone.label" class="form-select-small">
 			<option value=""></option>
-			<option v-for="(key,label) in phoneTypes" :value="label" :key="label">{{ key }}</option>
+			<option v-for="(phoneType,key) in formData.phoneTypes" :value="key" :key="key">{{ phoneType.label }}</option>
 		</select>
-		<label for="phone" class="sr-only">{{ label }}</label>
+		<label for="phone" class="sr-only">{{ phone.label ? phone.label : 'Phone Number Type Not Selected' }}</label>
 		<div class="form-label-prefix">
-			<p v-if="selectedLabel == 'clu_campus'">805-493-</p>
-			<p v-if="selectedLabel == 'plts_campus'">510-559-</p>
+			<p v-if="phone.label == 'clu_campus'">805-493-</p>
+			<p v-if="phone.label == 'plts_campus'">510-559-</p>
 		
-			<input v-model="phoneNumber" type="text" maxlength="4" />
+			<input v-model="phone.number" type="text" maxlength="4" />
 		</div>
 	</div>
 </template>
@@ -19,52 +19,25 @@ export default {
 	name: 'Phone',
 	props: ['formData'],
 	watch: {
-		'phoneNumber': function(newData){
-			this.$set(this.formData,this.$vnode.key,{
-				'number': newData,
-				'label': this.selectedLabel,
-				'shortLabel': this.phoneTypes[this.selectedLabel].shortLabel,
-				'prefix': this.phoneTypes[this.selectedLabel].prefix
-			});
+		'phone': {
+			handler: 'setPhoneData',
+			deep: true
 		}
 	},
-	computed: {
-		changeLabel: {
-			get(newData){
-				return this.selectedLabel;
-			},
-			set(newData){
-				console.log(this.$vnode.key,newData);
-				this.selectedLabel = newData;
-			}
+	methods: {
+		setPhoneData(newData){
+			this.$set(this.formData.phones,this.$vnode.key,{
+				'number': this.phone.number,
+				'label': this.phone.label
+			});
 		}
 	},
 	data(){
 		return {
-			phoneTypes: {
-				clu_campus: {
-					label: 'Cal Lutheran Extension',
-					shortLabel: 'Office',
-					prefix: '805-493-'
-				},
-				plts_campus: {
-					label: 'PLTS Campus Extension',
-					shortLabel: 'Office',
-					prefix: '510-559-'
-				},
-				fax: {
-					label: 'Fax',
-					shortLabel: 'Fax',
-					prefix: ''
-				},
-				mobile: {
-					label: 'Mobile',
-					shortLabel: 'Mobile',
-					prefix: ''
-				}
-			},
-			phoneNumber: '',
-			selectedLabel: ''
+			phone: {
+				number: '',
+				label: ''
+			}
 		}
 	}
 }
