@@ -35,10 +35,12 @@
 				</template>
 
 				<template v-else>
-					60 West Olsen Road <template v-if="formData.mail_code">#{{ formData.mail_code }}</template>&nbsp;|&nbsp;Thousand Oaks, CA 91360<br />
+					60 West Olsen Road <template v-if="formData.mail_code">#{{ formData.mail_code }}</template>&nbsp;|&nbsp;Thousand Oaks, CA 91360
 				</template>
 
-				<template v-for="(phone, key) in formData.phones">
+				<template v-for="(phone, key, index) in formData.phones">
+					<template v-if="index == 0"><br /></template>
+					<template v-if="index > 0">&nbsp;|&nbsp;</template>
 					<template v-if="phone.label">
 						{{ formData.phoneTypes[phone.label].shortLabel }}: {{ formData.phoneTypes[phone.label].prefix + phone.number }}
 					</template>
