@@ -33,20 +33,14 @@
 					pronouns_custom: "",
 					logo: "callutheran",
 					logos: {
-						callutheran:
-							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-default-signature.png",
-						som:
-							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-som-signature.png",
-						coas:
-							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-coas-signature.png",
-						gsoe:
-							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-gsoe-signature.png",
-						gsop:
-							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-gsop-signature.png",
-						pros:
-							"https://www.callutheran.edu/offices/marketing/brand/images/CLU-professionals-signature.png",
-						plts:
-							"https://www.callutheran.edu/offices/marketing/brand/email/images/plts.png"
+						callutheran: "https://www.callutheran.edu/offices/marketing/brand/images/CLU-default-signature.png",
+						som: "https://www.callutheran.edu/offices/marketing/brand/images/CLU-som-signature.png",
+						coas: "https://www.callutheran.edu/offices/marketing/brand/images/CLU-coas-signature.png",
+						gsoe: "https://www.callutheran.edu/offices/marketing/brand/images/CLU-gsoe-signature.png",
+						gsop: "https://www.callutheran.edu/offices/marketing/brand/images/CLU-gsop-signature.png",
+						pros: "https://www.callutheran.edu/offices/marketing/brand/images/CLU-professionals-signature.png",
+						plts: "https://www.callutheran.edu/offices/marketing/brand/email/images/plts.png",
+						sports: "https://www.callutheran.edu/offices/marketing/brand/email/images/spirit-mark.png"
 					},
 					social_media_display: false,
 					social_media: {

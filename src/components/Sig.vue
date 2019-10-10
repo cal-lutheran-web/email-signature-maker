@@ -16,7 +16,7 @@
 			<img
 				:src="formData.logos[formData.logo]"
 				alt="California Lutheran University"
-				width="250"
+				:width="this.logo_w ? this.logo_w : 250"
 				:height="this.logo_h ? this.logo_h : 24"
 				v-if="formData.logo !== 'plts'"
 			/>
@@ -24,7 +24,7 @@
 			<img
 				:src="formData.logos.plts"
 				alt="Pacific Lutheran Theological Seminary"
-				width="250"
+				:width="this.logo_w ? this.logo_w : 250"
 				:height="this.logo_h ? this.logo_h : 24"
 				v-if="formData.logo == 'plts'"
 			/>
