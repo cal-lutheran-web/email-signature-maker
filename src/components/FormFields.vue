@@ -73,7 +73,6 @@
 				<input v-model="formData.mail_code" type="text" />
 			</div>
 
-			<h3>Phone Numbers</h3>
 			<Phone :formData="formData" key="phone_1"></Phone>
 			<Phone :formData="formData" key="phone_2"></Phone>
 			<Phone :formData="formData" key="phone_3"></Phone>
