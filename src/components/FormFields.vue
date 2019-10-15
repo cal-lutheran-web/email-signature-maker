@@ -77,10 +77,6 @@
 			<Phone :formData="formData" key="phone_2"></Phone>
 			<Phone :formData="formData" key="phone_3"></Phone>
 
-			<div class="form-item">
-				<label for="fax">Fax</label>
-				<input v-model="formData.fax" type="text" maxlength="4" />
-			</div>
 		</fieldset>
 
 		<fieldset name="social-media-info">
