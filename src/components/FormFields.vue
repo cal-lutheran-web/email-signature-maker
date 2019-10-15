@@ -36,6 +36,20 @@
 			<legend><span>Department Info</span></legend>
 
 			<div class="form-item">
+				<label for="logo">School Mark</label>
+				<select v-model="formData.logo" id="logo">
+					<option value="callutheran" selected="true">Cal Lutheran</option>
+					<option value="coas">College of Arts &amp; Sciences</option>
+					<option value="som">School of Management</option>
+					<option value="gsoe">Graduate School of Education</option>
+					<option value="gsop">Graduate School of Psychology</option>
+					<option value="pros">Bachelor's Degree for Professionals</option>
+					<option value="plts">Pacific Lutheran Theological Seminary</option>
+					<option value="sports">Spirit Mark (Athletics-use only)</option>
+				</select>
+			</div>
+
+			<div class="form-item">
 				<label for="department">Department</label>
 				<input v-model="formData.department" type="text" />
 			</div>
@@ -47,20 +61,6 @@
 					<p v-if="formData.logo == 'plts'">PLTS.edu/</p> 
 					<input v-model="formData.website" type="text" />
 				</div>
-			</div>
-
-			<div class="form-item">
-				<label for="logo">Logo</label>
-				<select v-model="formData.logo" id="logo">
-					<option value="callutheran" selected="true">Cal Lutheran</option>
-					<option value="coas">College of Arts &amp; Sciences</option>
-					<option value="som">School of Management</option>
-					<option value="gsoe">Graduate School of Education</option>
-					<option value="gsop">Graduate School of Psychology</option>
-					<option value="pros">Bachelor's Degree for Professionals</option>
-					<option value="plts">Pacific Lutheran Theological Seminary</option>
-					<option value="sports">Spirit Mark (Athletics-use only)</option>
-				</select>
 			</div>
 
 		</fieldset>
