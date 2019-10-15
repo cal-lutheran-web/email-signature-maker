@@ -66,6 +66,12 @@
 					<img src="https://www.callutheran.edu/offices/marketing/brand/email/images/youtube.png" width="24" height="24" />
 				</a>
 			</p>
+
+			<p style="margin-top: 1em">
+				<template v-for="(badge,key) in formData.badges">
+					<img v-if="badge.display" :src="badge.img" width="60" height="60" :key="key" />
+				</template>
+			</p>
 		</div>
 
 		<button @click="toClipboard" class="btn btn-small green">Copy to Clipboard</button>

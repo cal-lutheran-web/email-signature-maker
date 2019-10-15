@@ -109,18 +109,29 @@
 
 
 		</fieldset>
+		<fieldset name="badges-info">
+			<legend>Badges</legend>
+
+			<div class="form-flex">
+				<template v-for="(badge,key) in formData.badges">
+					<Badges :badge="badge" :key="key"></Badges>
+				</template>
+			</div>
+
+		</fieldset>
 	</form>
 </template>
 
 <script>
 	import Vue from "vue";
 	import Phone from "./Phone.vue";
+	import Badges from "./Badges.vue";
 
 	export default {
 		name: "FormFields",
 		props: ["formData"],
 		components: {
-			Phone
+			Phone, Badges
 		},
 		data() {
 			return {
@@ -208,5 +219,10 @@
 
 	legend span {
 		display: block;
+	}
+
+
+	.form-flex {
+		display: flex;
 	}
 </style>
