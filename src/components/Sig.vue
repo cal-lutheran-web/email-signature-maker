@@ -39,7 +39,7 @@
 				</template>
 
 				<template v-for="(phone, key, index) in formData.phones">
-					<template v-if="index == 0"><br /></template>
+					<template v-if="index == 0"><br :key="key" /></template>
 					<template v-if="index > 0">&nbsp;|&nbsp;</template>
 					<template v-if="phone.label">
 						{{ formData.phoneTypes[phone.label].shortLabel }}: {{ formData.phoneTypes[phone.label].prefix + phone.number }}
