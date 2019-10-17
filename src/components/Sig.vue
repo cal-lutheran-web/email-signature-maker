@@ -125,8 +125,8 @@
 				var img = new Image();
 				img.src = this.formData.logos[this.formData.logo];
 				img.onload = function() {
-					$this.logo_w = this.width;
-					$this.logo_h = this.height;
+					$this.logo_w = (this.width / 2);
+					$this.logo_h = (this.height / 2);
 				};
 			}
 		},
