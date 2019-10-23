@@ -6,8 +6,8 @@
 			<option v-for="(phoneType,key) in formData.phoneTypes" :value="key" :key="key">{{ phoneType.label }}</option>
 		</select>
 		<div class="form-label-prefix">
-			<p v-if="phone.label == 'clu_campus'">805-493-</p>
-			<p v-if="phone.label == 'plts_campus'">510-559-</p>
+			<p v-if="phone.label == 'clu_campus'">{{ formData.phoneTypes['clu_campus'].prefix }}</p>
+			<p v-if="phone.label == 'plts_campus'">{{ formData.phoneTypes['plts_campus'].prefix }}</p>
 
 			<input v-model="phone.number" type="text" v-if="phone.label" :maxlength="this.formData.phoneTypes[this.phone.label].maxLength" :placeholder="this.formData.phoneTypes[this.phone.label].placeholder" />
 		</div>
