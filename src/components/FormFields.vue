@@ -131,7 +131,8 @@
 		name: "FormFields",
 		props: ["formData"],
 		components: {
-			Phone, Badges
+			Phone,
+			Badges
 		},
 		data() {
 			return {
@@ -183,6 +184,7 @@
 	}
 	.form-label-prefix p {
 		padding: 0 1ch 0 0;
+		flex: 0 0 auto;
 	}
 
 	fieldset {
@@ -193,15 +195,15 @@
 		background-color: #aadff1;
 	}
 
-		fieldset h3 {
-			color: #333;
-			font-family: Raleway, sans-serif;
-			font-size: 1rem;
-			line-height: 1.5em;
-			margin: 0;
-			letter-spacing: normal;
-			font-weight: bold;
-		}
+	fieldset h3 {
+		color: #333;
+		font-family: Raleway, sans-serif;
+		font-size: 1rem;
+		line-height: 1.5em;
+		margin: 0;
+		letter-spacing: normal;
+		font-weight: bold;
+	}
 
 	legend {
 		display: block;
@@ -220,7 +222,6 @@
 	legend span {
 		display: block;
 	}
-
 
 	.form-flex {
 		display: flex;
