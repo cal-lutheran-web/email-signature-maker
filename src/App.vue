@@ -30,14 +30,22 @@
 					pronouns_custom: "",
 					logo: "callutheran",
 					logos: {
-						callutheran: "https://www.callutheran.edu/offices/marketing/brand/email/images/cal-lutheran@2x.png",
-						som: "https://www.callutheran.edu/offices/marketing/brand/email/images/som@2x.png",
-						coas: "https://www.callutheran.edu/offices/marketing/brand/email/images/coas@2x.png",
-						gsoe: "https://www.callutheran.edu/offices/marketing/brand/email/images/gsop@2x.png",
-						gsop: "https://www.callutheran.edu/offices/marketing/brand/email/images/gsop@2x.png",
-						pros: "https://www.callutheran.edu/offices/marketing/brand/email/images/pros@2x.png",
-						plts: "https://www.callutheran.edu/offices/marketing/brand/email/images/plts@2x.png",
-						sports: "https://www.callutheran.edu/offices/marketing/brand/email/images/spirit-mark@2x.png"
+						callutheran:
+							"https://www.callutheran.edu/offices/marketing/brand/email/images/cal-lutheran@2x.png",
+						som:
+							"https://www.callutheran.edu/offices/marketing/brand/email/images/som@2x.png",
+						coas:
+							"https://www.callutheran.edu/offices/marketing/brand/email/images/coas@2x.png",
+						gsoe:
+							"https://www.callutheran.edu/offices/marketing/brand/email/images/gsoe@2x.png",
+						gsop:
+							"https://www.callutheran.edu/offices/marketing/brand/email/images/gsop@2x.png",
+						pros:
+							"https://www.callutheran.edu/offices/marketing/brand/email/images/pros@2x.png",
+						plts:
+							"https://www.callutheran.edu/offices/marketing/brand/email/images/plts@2x.png",
+						sports:
+							"https://www.callutheran.edu/offices/marketing/brand/email/images/spirit-mark@2x.png"
 					},
 					social_media_display: false,
 					social_media: {
@@ -48,42 +56,46 @@
 					},
 					phoneTypes: {
 						clu_campus: {
-							label: 'Cal Lutheran Extension',
-							shortLabel: 'Office',
-							prefix: '805-493-'
+							label: "Cal Lutheran Extension",
+							shortLabel: "Office",
+							prefix: "805-493-"
 						},
 						plts_campus: {
-							label: 'PLTS Campus Extension',
-							shortLabel: 'Office',
-							prefix: '510-559-'
+							label: "PLTS Campus Extension",
+							shortLabel: "Office",
+							prefix: "510-559-"
 						},
 						fax: {
-							label: 'Fax',
-							shortLabel: 'Fax',
-							prefix: ''
+							label: "Fax",
+							shortLabel: "Fax",
+							prefix: ""
 						},
 						mobile: {
-							label: 'Mobile',
-							shortLabel: 'Mobile',
-							prefix: ''
+							label: "Mobile",
+							shortLabel: "Mobile",
+							prefix: ""
 						}
 					},
 					badges_display: false,
 					badges: {
 						bridge: {
-							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/BRIDGE.png",
+							img:
+								"https://www.callutheran.edu/offices/marketing/brand/email/images/BRIDGE.png",
 							name: "BRIDGE"
 						},
 						dreamer: {
-							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/DREAMer-Ally.png",
+							img:
+								"https://www.callutheran.edu/offices/marketing/brand/email/images/DREAMer-Ally.png",
 							name: "DREAMer Ally"
 						},
 						safe_zone: {
-							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/Safe-Zone.png",
+							img:
+								"https://www.callutheran.edu/offices/marketing/brand/email/images/Safe-Zone.png",
 							name: "Safe Zone"
 						},
 						vetnet: {
-							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/VET-NET-ALLY.png",
+							img:
+								"https://www.callutheran.edu/offices/marketing/brand/email/images/VET-NET-ALLY.png",
 							name: "VET NET Ally"
 						}
 					}
