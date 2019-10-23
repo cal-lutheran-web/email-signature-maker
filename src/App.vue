@@ -111,10 +111,6 @@
 
 
 <style>
-	.page-content {
-		margin-top: 3rem;
-	}
-
 	.sig-area {
 		position: sticky;
 		top: 25%;
