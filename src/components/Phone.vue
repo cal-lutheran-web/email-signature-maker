@@ -8,39 +8,47 @@
 		<div class="form-label-prefix">
 			<p v-if="phone.label == 'clu_campus'">805-493-</p>
 			<p v-if="phone.label == 'plts_campus'">510-559-</p>
-		
-			<input v-model="phone.number" type="text" maxlength="4" />
+
+			<input v-model="phone.number" type="text" v-if="phone.label" :maxlength="this.formData.phoneTypes[this.phone.label].maxLength" :placeholder="this.formData.phoneTypes[this.phone.label].placeholder" />
 		</div>
 	</div>
 </template>
 
 <script>
-export default {
-	name: 'Phone',
-	props: ['formData'],
-	watch: {
-		'phone': {
-			handler: 'setPhoneData',
-			deep: true
-		}
-	},
-	methods: {
-		setPhoneData(newData){
-			this.$set(this.formData.phones,this.$vnode.key,{
-				'number': this.phone.number,
-				'label': this.phone.label
-			});
-		}
-	},
-	data(){
-		return {
+	export default {
+		name: "Phone",
+		props: ["formData"],
+		watch: {
 			phone: {
-				number: '',
-				label: ''
+				handler: "setPhoneData",
+				deep: true
+			},
+			"phone.label": function(data) {
+				this.phone.number = "";
 			}
+		},
+		computed: {
+			phoneMaxLength: function() {
+				//console.log(this.formData.phoneTypes[this.phone.label].maxLength);
+			}
+		},
+		methods: {
+			setPhoneData(newData) {
+				this.$set(this.formData.phones, this.$vnode.key, {
+					number: this.phone.number,
+					label: this.phone.label
+				});
+			}
+		},
+		data() {
+			return {
+				phone: {
+					number: "",
+					label: ""
+				}
+			};
 		}
-	}
-}
+	};
 </script>
 
 <style>

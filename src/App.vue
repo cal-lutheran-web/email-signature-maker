@@ -58,22 +58,30 @@
 						clu_campus: {
 							label: "Cal Lutheran Extension",
 							shortLabel: "Office",
-							prefix: "805-493-"
+							prefix: "805-493-",
+							maxLength: "4",
+							placeholder: "xxxx"
 						},
 						plts_campus: {
 							label: "PLTS Campus Extension",
 							shortLabel: "Office",
-							prefix: "510-559-"
+							prefix: "510-559-",
+							maxLength: "4",
+							placeholder: "xxxx"
 						},
 						fax: {
 							label: "Fax",
 							shortLabel: "Fax",
-							prefix: ""
+							prefix: "",
+							maxLength: "",
+							placeholder: "(xxx) xxx-xxxx"
 						},
 						mobile: {
 							label: "Mobile",
 							shortLabel: "Mobile",
-							prefix: ""
+							prefix: "",
+							maxLength: "",
+							placeholder: "(xxx) xxx-xxxx"
 						}
 					},
 					badges_display: false,
