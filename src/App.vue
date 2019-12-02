@@ -49,10 +49,31 @@
 					},
 					social_media_display: false,
 					social_media: {
-						facebook: "https://www.facebook.com/callutheran",
-						instagram: "https://www.instagram.com/callutheran/",
-						youtube: "https://youtube.com/callutheran",
-						twitter: "https://twitter.com/callutheran"
+						facebook: {
+							name: "Facebook",
+							url: "https://www.facebook.com/callutheran",
+							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/facebook.png"
+						},
+						instagram: {
+							name: "Instagram",
+							url: "https://www.instagram.com/callutheran/",
+							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/instagram.png"
+						},
+						youtube: {
+							name: "YouTube",
+							url: "https://youtube.com/callutheran",
+							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/youtube.png"
+						},
+						twitter: {
+							name: "Twitter",
+							url: "https://twitter.com/callutheran",
+							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/twitter.png"
+						},
+						linkedin: {
+							name: "LinkedIn",
+							url: "https://www.linkedin.com/school/california-lutheran-university/",
+							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/linkedin.png"
+						}
 					},
 					phoneTypes: {
 						clu_campus: {

@@ -2,7 +2,7 @@
 	<div class="form-item form-item-inline form-item-img">
 		<label :for="this.$vnode.key" :class="{ checked : badge.display }">
 			<span class="sr-only">{{ badge.name }}</span>
-			<img :src="badge.img" width="60px" height="auto" :alt="badge.name" />
+			<img :src="badge.img" width="auto" height="60px" :alt="badge.name" />
 		</label>
 		<input :id="this.$vnode.key" v-model="badge.display" type="checkbox" />
 		

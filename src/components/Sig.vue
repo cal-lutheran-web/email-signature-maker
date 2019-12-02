@@ -53,23 +53,16 @@
 			</p>
 
 			<p v-if="formData.social_media_display" style="margin-top: 1em">
-				<a :href="formData.social_media.facebook" v-if="formData.social_media.facebook">
-					<img src="https://www.callutheran.edu/offices/marketing/brand/email/images/facebook.png" width="24" height="24" />
-				</a>
-				<a :href="formData.social_media.instagram" v-if="formData.social_media.instagram">
-					<img src="https://www.callutheran.edu/offices/marketing/brand/email/images/instagram.png" width="24" height="24" />
-				</a>
-				<a :href="formData.social_media.twitter" v-if="formData.social_media.twitter">
-					<img src="https://www.callutheran.edu/offices/marketing/brand/email/images/twitter.png" width="24" height="24" />
-				</a>
-				<a :href="formData.social_media.youtube" v-if="formData.social_media.youtube">
-					<img src="https://www.callutheran.edu/offices/marketing/brand/email/images/youtube.png" width="24" height="24" />
-				</a>
+				<template v-for="(sm, key, index) in formData.social_media">
+					<a :href="sm.url" v-if="sm.url" :key="key">
+						<img :src="sm.img" style="margin: 3px" :alt="sm.name" width="24" height="24" />
+					</a>
+				</template>
 			</p>
 
 			<p style="margin-top: 1em">
 				<template v-for="(badge,key) in formData.badges">
-					<img v-if="badge.display" :src="badge.img" width="60" height="60" :key="key" :alt="badge.name" />
+					<img v-if="badge.display" :src="badge.img" width="auto" height="60" style="margin: 0 3px" :key="key" :alt="badge.name" />
 				</template>
 			</p>
 		</div>

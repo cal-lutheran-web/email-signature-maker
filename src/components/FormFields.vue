@@ -22,6 +22,7 @@
 					<option value="They/Them/Theirs">They/Them/Theirs</option>
 					<option value="custom">Custom</option>
 				</select>
+				<p><a href="https://www.callutheran.edu/offices/marketing/brand/email/gender-pronouns.html" class="fancy">Learn more about gender pronouns</a></p>
 			</div>
 
 			<div class="form-item" v-if="formData.pronouns == 'custom'">
@@ -87,30 +88,19 @@
 				<input id="social-media" type="checkbox" v-model="formData.social_media_display" />
 			</div>
 
-			<div class="form-item" v-if="formData.social_media_display">
-				<label for="facebook">Facebook</label>
-				<input v-model="formData.social_media.facebook" type="text" />
-			</div>
-
-			<div class="form-item" v-if="formData.social_media_display">
-				<label for="twitter">Twitter</label>
-				<input v-model="formData.social_media.twitter" type="text" />
-			</div>
-
-			<div class="form-item" v-if="formData.social_media_display">
-				<label for="instagram">Instagram</label>
-				<input v-model="formData.social_media.instagram" type="text" />
-			</div>
-
-			<div class="form-item" v-if="formData.social_media_display">
-				<label for="youtube">YouTube</label>
-				<input v-model="formData.social_media.youtube" type="text" />
-			</div>
+			<template v-for="(sm, key, index) in formData.social_media">
+				<div class="form-item" v-if="formData.social_media_display" :key="key">
+					<label :for="key">{{ sm.name }}</label>
+					<input v-model="sm.url" type="text" />
+				</div>
+			</template>
 
 
 		</fieldset>
 		<fieldset name="badges-info">
 			<legend>Badges</legend>
+
+			<p>Only those who have completed these trainings are eligible to include them in their signatures. <a href="#">Learn more about these trainings.</a></p>
 
 			<div class="form-flex">
 				<template v-for="(badge,key) in formData.badges">
