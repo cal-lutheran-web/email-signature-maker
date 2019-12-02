@@ -69,12 +69,14 @@
 
 			<p style="margin-top: 1em">
 				<template v-for="(badge,key) in formData.badges">
-					<img v-if="badge.display" :src="badge.img" width="60" height="60" :key="key" />
+					<img v-if="badge.display" :src="badge.img" width="60" height="60" :key="key" :alt="badge.name" />
 				</template>
 			</p>
 		</div>
 
-		<button @click="toClipboard" class="btn btn-small green">Copy to Clipboard</button>
+		<button @click="toClipboard" class="btn btn-small green">Copy Signature to Clipboard</button>
+
+		<div class="bg-box bg-silver"><p>After copying your signature to the clipboard, open your email signature settings and paste your new signature. Officially supported email clients are Outlook for Windows/MacOS and Outlook Web App. Please contact the Help Desk if you need additional support in adding your signature.</p></div>
 
 		<p v-if="this.confirmCopy">Copied to Clipboard</p>
 	</div>
@@ -89,7 +91,7 @@
 	}
 
 	.sig::before {
-		content: "Select the Contents";
+		content: "Signature Preview";
 		display: inline-block;
 		background: #bfc5c9;
 		color: white;
@@ -125,14 +127,15 @@
 				var img = new Image();
 				img.src = this.formData.logos[this.formData.logo];
 				img.onload = function() {
-					$this.logo_w = (this.width / 2);
-					$this.logo_h = (this.height / 2);
+					$this.logo_w = this.width / 2;
+					$this.logo_h = this.height / 2;
 				};
 			}
 		},
 		methods: {
 			toClipboard() {
-				var sigArea = document.querySelector("#signature-content").innerHTML;
+				var sigArea = document.querySelector("#signature-content")
+					.innerHTML;
 
 				function listener(e) {
 					e.clipboardData.setData("text/html", sigArea);

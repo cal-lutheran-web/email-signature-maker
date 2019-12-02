@@ -2,7 +2,7 @@
 	<div class="form-item form-item-inline form-item-img">
 		<label :for="this.$vnode.key" :class="{ checked : badge.display }">
 			<span class="sr-only">{{ badge.name }}</span>
-			<img :src="badge.img" width="60px" height="auto" />
+			<img :src="badge.img" width="60px" height="auto" :alt="badge.name" />
 		</label>
 		<input :id="this.$vnode.key" v-model="badge.display" type="checkbox" />
 		
@@ -10,16 +10,16 @@
 </template>
 
 <script>
-export default {
-	name: "Badges",
-	props: ["badge"]
-}
+	export default {
+		name: "Badges",
+		props: ["badge"]
+	};
 </script>
 
 <style>
 	.form-item-img label {
 		cursor: pointer;
-		padding: .25rem;
+		padding: 0.25rem;
 	}
 
 	.form-item-img label img {
@@ -34,5 +34,7 @@ export default {
 		opacity: 1;
 	}
 
-	.form-item-img input { display: none; }
+	.form-item-img input {
+		display: none;
+	}
 </style>
