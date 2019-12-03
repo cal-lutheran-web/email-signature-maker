@@ -54,15 +54,19 @@
 
 			<p v-if="formData.social_media_display" style="margin-top: 1em">
 				<template v-for="(sm, key) in formData.social_media">
-					<a :href="sm.url" v-if="sm.url" :key="key">
-						<img :src="sm.img" :alt="sm.name" width="24" height="24" />
-					</a>&nbsp;
+					<span v-if="sm.url" :key="key">
+						<a :href="sm.url">
+							<img :src="sm.img" :alt="sm.name" width="24" height="24" />
+						</a>&nbsp;
+					</span>
 				</template>
 			</p>
 
 			<p style="margin-top: 1em">
 				<template v-for="(badge,key) in formData.badges">
-					<img v-if="badge.display" :src="badge.img" width="auto" height="60" :key="key" :alt="badge.name" />&nbsp;
+					<span :key="key" v-if="badge.display">
+						<img :src="badge.img" width="auto" height="60" :alt="badge.name" />&nbsp;
+					</span>
 				</template>
 			</p>
 		</div>
