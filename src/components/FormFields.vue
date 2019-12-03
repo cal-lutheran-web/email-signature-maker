@@ -88,7 +88,7 @@
 				<input id="social-media" type="checkbox" v-model="formData.social_media_display" />
 			</div>
 
-			<template v-for="(sm, key, index) in formData.social_media">
+			<template v-for="(sm, key) in formData.social_media">
 				<div class="form-item" v-if="formData.social_media_display" :key="key">
 					<label :for="key">{{ sm.name }}</label>
 					<input v-model="sm.url" type="text" />
