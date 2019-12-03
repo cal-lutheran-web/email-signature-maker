@@ -55,14 +55,14 @@
 			<p v-if="formData.social_media_display" style="margin-top: 1em">
 				<template v-for="(sm, key) in formData.social_media">
 					<a :href="sm.url" v-if="sm.url" :key="key">
-						<img :src="sm.img" style="margin: 3px" :alt="sm.name" width="24" height="24" />
-					</a>
+						<img :src="sm.img" :alt="sm.name" width="24" height="24" />
+					</a>&nbsp;
 				</template>
 			</p>
 
 			<p style="margin-top: 1em">
 				<template v-for="(badge,key) in formData.badges">
-					<img v-if="badge.display" :src="badge.img" width="auto" height="60" style="margin: 0 3px" :key="key" :alt="badge.name" />
+					<img v-if="badge.display" :src="badge.img" width="auto" height="60" :key="key" :alt="badge.name" />&nbsp;
 				</template>
 			</p>
 		</div>
@@ -71,7 +71,7 @@
 
 		<div class="bg-box bg-silver"><p>After copying your signature to the clipboard, open your email signature settings and paste your new signature. Officially supported email clients are Outlook for Windows/MacOS and Outlook Web App. Please contact the Help Desk if you need additional support in adding your signature.</p></div>
 
-		<p v-if="this.confirmCopy">Copied to Clipboard</p>
+		<div class="bg-box bg-gold-alt icon-info" v-if="this.confirmCopy" class="info"><strong>Copied to Clipboard</strong></div>
 	</div>
 </template>
 

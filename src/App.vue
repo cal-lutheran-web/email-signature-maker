@@ -117,15 +117,15 @@
 								"https://www.callutheran.edu/offices/marketing/brand/email/images/DREAMer-Ally.png",
 							name: "DREAMer Ally"
 						},
-						safe_zone: {
-							img:
-								"https://www.callutheran.edu/offices/marketing/brand/email/images/Safe-Zone.png",
-							name: "Safe Zone"
-						},
 						vetnet: {
 							img:
 								"https://www.callutheran.edu/offices/marketing/brand/email/images/VET-NET-ALLY.png",
 							name: "VET NET Ally"
+						},
+						safe_zone: {
+							img:
+								"https://www.callutheran.edu/offices/marketing/brand/email/images/Safe-Zone.png",
+							name: "Safe Zone"
 						}
 					}
 				}
