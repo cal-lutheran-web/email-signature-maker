@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel email-sig.html",
+    "start": "parcel email-sig.html",
     "build": "parcel build main.js"
   },
   "keywords": [],

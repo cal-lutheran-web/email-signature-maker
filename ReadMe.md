@@ -9,7 +9,7 @@ Requires Node.
 `npm install`  
 for initial setup
 
-`npm run dev`  
+`npm start`  
 Tell parcel to build files and set up a testing server.
 
 `npm run build`  
