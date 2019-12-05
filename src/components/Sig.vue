@@ -72,10 +72,11 @@
 		</div>
 
 		<button @click="toClipboard" class="btn btn-small green">Copy Signature to Clipboard</button>
+		<span v-if="this.confirmCopy"><strong>Copied to Clipboard</strong></span>
 
 		<div class="bg-box bg-silver"><p>After copying your signature to the clipboard, open your email signature settings and paste your new signature. Officially supported email clients are Outlook for Windows/MacOS and Outlook Web App. Please contact the Help Desk if you need additional support in adding your signature.</p></div>
 
-		<div class="bg-box bg-gold-alt icon-info" v-if="this.confirmCopy"><strong>Copied to Clipboard</strong></div>
+		
 	</div>
 </template>
 
@@ -144,6 +145,12 @@
 				document.removeEventListener("copy", listener);
 
 				this.confirmCopy = true;
+
+				let self = this;
+
+				setTimeout(function(){
+					self.confirmCopy = false
+				}, 5000);
 			}
 		}
 	};
