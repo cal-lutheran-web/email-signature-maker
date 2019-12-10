@@ -62,19 +62,13 @@
 				</template>
 			</p>
 
-			<p style="margin-top: 1em">
-				<template v-for="(badge,key) in formData.badges">
-					<span :key="key" v-if="badge.display">
-						<img :src="badge.img" width="auto" height="60" :alt="badge.name" />&nbsp;
-					</span>
-				</template>
-			</p>
+			
 		</div>
 
 		<button @click="toClipboard" class="btn btn-small green">Copy Signature to Clipboard</button>
 		<span v-if="this.confirmCopy"><strong>Copied to Clipboard</strong></span>
 
-		<div class="bg-box bg-silver"><p>After copying your signature to the clipboard, open your email signature settings and paste your new signature. Officially supported email clients are Outlook for Windows/MacOS and Outlook Web App. Please contact the Help Desk if you need additional support in adding your signature.</p></div>
+		<div class="bg-box bg-silver"><p>After copying your signature to the clipboard, open your email signature settings and paste your new signature. Officially supported email clients are Outlook for Windows/MacOS and Outlook Web App. Please contact the <a href="mailto:helpdesk@callutheran.edu">ITS Help Desk</a> if you need additional support in adding your signature.</p></div>
 
 		
 	</div>
