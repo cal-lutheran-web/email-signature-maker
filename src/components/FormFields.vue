@@ -44,7 +44,7 @@
 					<option value="som">School of Management</option>
 					<option value="gsoe">Graduate School of Education</option>
 					<option value="gsop">Graduate School of Psychology</option>
-					<option value="pros">Bachelor's Degree for Professionals</option>
+					<option value="pcs">School for Professional and Continuing Studies</option>
 					<option value="plts">Pacific Lutheran Theological Seminary</option>
 					<option value="sports">Spirit Mark (Athletics-use only)</option>
 				</select>

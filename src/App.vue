@@ -40,8 +40,8 @@
 							"https://www.callutheran.edu/offices/marketing/brand/email/images/gsoe@2x.png",
 						gsop:
 							"https://www.callutheran.edu/offices/marketing/brand/email/images/gsop@2x.png",
-						pros:
-							"https://www.callutheran.edu/offices/marketing/brand/email/images/pros@2x.png",
+						pcs:
+							"https://www.callutheran.edu/offices/marketing/brand/email/images/pcs.png",
 						plts:
 							"https://www.callutheran.edu/offices/marketing/brand/email/images/plts@2x.png",
 						sports:
