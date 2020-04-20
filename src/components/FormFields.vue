@@ -103,12 +103,9 @@
 
 			<p>Only those who have completed these trainings are eligible to include them in their signatures. <a href="#">Learn more about these trainings.</a></p>
 
-			<div class="form-flex">
-				<template v-for="(badge,key) in formData.badges">
-					<Badges :badge="badge" :key="key"></Badges>
-				</template>
-			</div>
-
+			<template v-for="(badge,key) in formData.badges">
+				<Badges :badge="badge" :key="key"></Badges>
+			</template>
 		</fieldset>
 		
 	</form>
