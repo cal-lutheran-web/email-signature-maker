@@ -62,6 +62,14 @@
 				</template>
 			</p>
 
+			<p style="margin-top: 1em">
+				<template v-for="(badge,key) in formData.badges">
+					<span :key="key" v-if="badge.display">
+						<img :src="badge.img" width="auto" height="60" :alt="badge.name" />&nbsp;
+					</span>
+				</template>
+			</p>
+
 			
 		</div>
 

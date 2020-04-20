@@ -97,6 +97,19 @@
 
 
 		</fieldset>
+
+		<fieldset name="badges-info">
+			<legend>Badges</legend>
+
+			<p>Only those who have completed these trainings are eligible to include them in their signatures. <a href="#">Learn more about these trainings.</a></p>
+
+			<div class="form-flex">
+				<template v-for="(badge,key) in formData.badges">
+					<Badges :badge="badge" :key="key"></Badges>
+				</template>
+			</div>
+
+		</fieldset>
 		
 	</form>
 </template>
@@ -104,12 +117,14 @@
 <script>
 	import Vue from "vue";
 	import Phone from "./Phone.vue";
+	import Badges from "./Badges.vue";
 
 	export default {
 		name: "FormFields",
 		props: ["formData"],
 		components: {
-			Phone
+			Phone,
+			Badges
 		},
 		data() {
 			return {
