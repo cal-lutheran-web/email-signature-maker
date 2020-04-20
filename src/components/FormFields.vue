@@ -101,14 +101,11 @@
 		<fieldset name="badges-info">
 			<legend>Badges</legend>
 
-			<p>Only those who have completed these trainings are eligible to include them in their signatures. <a href="#">Learn more about these trainings.</a></p>
+			<p>To continue serving and meeting our students’ needs, Cal Lutheran faculty and staff members can receive training to become official allies for some of our most vulnerable students. Read more on each badge about how to become an ally.</p>
 
-			<div class="form-flex">
-				<template v-for="(badge,key) in formData.badges">
-					<Badges :badge="badge" :key="key"></Badges>
-				</template>
-			</div>
-
+			<template v-for="(badge,key) in formData.badges">
+				<Badges :badge="badge" :key="key"></Badges>
+			</template>
 		</fieldset>
 		
 	</form>
