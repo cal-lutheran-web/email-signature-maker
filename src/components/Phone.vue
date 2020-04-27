@@ -1,7 +1,7 @@
 <template>
 	<div class="form-item">
 		<label for="phone">{{ phone.label ? formData.phoneTypes[phone.label].shortLabel : 'Enter a phone number' }}</label>
-		<select v-model="phone.label" class="form-select-small">
+		<select v-model="phone.label" id="phone" class="form-select-small">
 			<option value=""></option>
 			<option v-for="(phoneType,key) in formData.phoneTypes" :value="key" :key="key">{{ phoneType.label }}</option>
 		</select>
@@ -9,7 +9,9 @@
 			<p v-if="phone.label == 'clu_campus'">{{ formData.phoneTypes['clu_campus'].prefix }}</p>
 			<p v-if="phone.label == 'plts_campus'">{{ formData.phoneTypes['plts_campus'].prefix }}</p>
 
-			<input v-model="phone.number" type="text" v-if="phone.label" :maxlength="this.formData.phoneTypes[this.phone.label].maxLength" :placeholder="this.formData.phoneTypes[this.phone.label].placeholder" />
+			<label class="sr-only" :for="this.$vnode.key"></label>
+
+			<input v-model="phone.number" type="text" :id="this.$vnode.key" v-if="phone.label" :maxlength="this.formData.phoneTypes[this.phone.label].maxLength" :placeholder="this.formData.phoneTypes[this.phone.label].placeholder" />
 		</div>
 	</div>
 </template>

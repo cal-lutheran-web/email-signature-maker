@@ -5,12 +5,12 @@
 
 			<div class="form-item">
 				<label for="name">Name</label>
-				<input v-model="formData.name" type="text" />
+				<input v-model="formData.name" id="name" type="text" />
 			</div>
 
 			<div class="form-item">
 				<label for="title">Title</label>
-				<input v-model="formData.title" type="text" />
+				<input v-model="formData.title" id="title" type="text" />
 			</div>
 
 			<div class="form-item">
@@ -27,7 +27,7 @@
 
 			<div class="form-item" v-if="formData.pronouns == 'custom'">
 				<label for="pronouns-custom">Custom Pronouns</label>
-				<input v-model="formData.pronouns_custom" type="text" />
+				<input v-model="formData.pronouns_custom" id="pronouns-custom" type="text" />
 			</div>
 
 		</fieldset>
@@ -52,7 +52,7 @@
 
 			<div class="form-item">
 				<label for="department">Department</label>
-				<input v-model="formData.department" type="text" />
+				<input v-model="formData.department" id="department" type="text" />
 			</div>
 
 			<div class="form-item">
@@ -60,7 +60,7 @@
 				<div class="form-label-prefix">
 					<p v-if="formData.logo !== 'plts'">CalLutheran.edu/</p>
 					<p v-if="formData.logo == 'plts'">PLTS.edu/</p> 
-					<input v-model="formData.website" type="text" />
+					<input v-model="formData.website" id="website" type="text" />
 				</div>
 			</div>
 
@@ -71,7 +71,7 @@
 		
 			<div class="form-item">
 				<label for="mail_code">Mail Code</label>
-				<input v-model="formData.mail_code" type="text" />
+				<input v-model="formData.mail_code" id="mail_code" type="text" />
 			</div>
 
 			<Phone :formData="formData" key="phone_1"></Phone>
@@ -91,7 +91,7 @@
 			<template v-for="(sm, key) in formData.social_media">
 				<div class="form-item" v-if="formData.social_media_display" :key="key">
 					<label :for="key">{{ sm.name }}</label>
-					<input v-model="sm.url" type="text" />
+					<input v-model="sm.url" :id="key" type="text" />
 				</div>
 			</template>
 
