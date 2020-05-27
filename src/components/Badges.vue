@@ -1,6 +1,6 @@
 <template>
 	<div class="form-item form-item-img">
-		<input :id="this.$vnode.key" v-model="badge.display" type="checkbox" v-if="formData" />
+		<input :id="this.$vnode.key" v-model="badge.display" type="checkbox" :disabled="isAllowed(disabled)" />
 		
 		<label :for="this.$vnode.key" :class="{ checked : badge.display }">
 			<span class="sr-only">{{ badge.name }}</span>
@@ -16,7 +16,13 @@
 <script>
 	export default {
 		name: "Badges",
-		props: ["badge"]
+		props: ["badge", "disabled"],
+		methods: {
+			isAllowed: function(disabledStatus) {
+				console.log(disabledStatus);
+				return disabledStatus ? 0 : 1;
+			}
+		}
 	};
 </script>
 

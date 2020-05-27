@@ -106,16 +106,16 @@
 			<p>Have you received campus ally training?</p>
 
 			<div class="form-item">
-				<label for="badges-toggle-yes">Yes</label> <input v-model="formData.badges_display" id="badges-toggle-yes" type="radio" name="badges-toggle" value="true" />
+				<label for="badges-toggle-yes">Yes</label> <input v-model="formData.badges_display" id="badges-toggle-yes" type="radio" value="true" />
 			</div>
 
 			<div class="form-item">
-				<label for="badges-toggle-no">No</label> <input v-model="formData.badges_display" id="badges-toggle-no" type="radio" name="badges-toggle" value="false" />
+				<label for="badges-toggle-no">No</label> <input v-model="formData.badges_display" id="badges-toggle-no" type="radio" value="false" />
 			</div>
 
-			<div class="badges" v-if="formData.badges_display">
+			<div class="badges" >
 				<template v-for="(badge,key) in formData.badges">
-					<Badges :badge="badge" :key="key"></Badges>
+					<Badges :badge="badge" :disabled="formData.badges_display" :key="key"></Badges>
 				</template>
 			</div>
 

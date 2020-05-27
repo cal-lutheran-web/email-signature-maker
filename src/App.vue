@@ -111,7 +111,7 @@
 							placeholder: "(xxx) xxx-xxxx"
 						}
 					},
-					badges_display: "",
+					badges_display: null,
 					badges: {
 						bridge: {
 							img:
