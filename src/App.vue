@@ -52,27 +52,33 @@
 						facebook: {
 							name: "Facebook",
 							url: "https://www.facebook.com/callutheran",
-							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/facebook.png"
+							img:
+								"https://www.callutheran.edu/offices/marketing/brand/email/images/facebook.png"
 						},
 						instagram: {
 							name: "Instagram",
 							url: "https://www.instagram.com/callutheran/",
-							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/instagram.png"
+							img:
+								"https://www.callutheran.edu/offices/marketing/brand/email/images/instagram.png"
 						},
 						youtube: {
 							name: "YouTube",
 							url: "https://youtube.com/callutheran",
-							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/youtube.png"
+							img:
+								"https://www.callutheran.edu/offices/marketing/brand/email/images/youtube.png"
 						},
 						twitter: {
 							name: "Twitter",
 							url: "https://twitter.com/callutheran",
-							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/twitter.png"
+							img:
+								"https://www.callutheran.edu/offices/marketing/brand/email/images/twitter.png"
 						},
 						linkedin: {
 							name: "LinkedIn",
-							url: "https://www.linkedin.com/school/california-lutheran-university/",
-							img: "https://www.callutheran.edu/offices/marketing/brand/email/images/linkedin.png"
+							url:
+								"https://www.linkedin.com/school/california-lutheran-university/",
+							img:
+								"https://www.callutheran.edu/offices/marketing/brand/email/images/linkedin.png"
 						}
 					},
 					phoneTypes: {
@@ -105,35 +111,43 @@
 							placeholder: "(xxx) xxx-xxxx"
 						}
 					},
-					badges_display: false,
+					badges_display: "",
 					badges: {
 						bridge: {
 							img:
 								"https://www.callutheran.edu/offices/marketing/brand/email/images/BRIDGE.png",
 							name: "BRIDGE",
-							description: "BRIDGE Ally trainings help build regular interfaith dialogue on campus.",
-							link: "https://www.callutheran.edu/mission-identity/bridge.html"
+							description:
+								"BRIDGE Ally trainings help build regular interfaith dialogue on campus.",
+							link:
+								"https://www.callutheran.edu/mission-identity/bridge.html"
 						},
 						dreamer: {
 							img:
 								"https://www.callutheran.edu/offices/marketing/brand/email/images/DREAMer-Ally.png",
 							name: "DREAMer Ally",
-							description: "DREAMer Ally Training creates a network of support for undocumented/DACAmented students or students who come from a mixed status family.",
-							link: "https://www.callutheran.edu/admission/undergraduate/dream-act/dreamer-ally/index.html"
+							description:
+								"DREAMer Ally Training creates a network of support for undocumented/DACAmented students or students who come from a mixed status family.",
+							link:
+								"https://www.callutheran.edu/admission/undergraduate/dream-act/dreamer-ally/index.html"
 						},
 						vetnet: {
 							img:
 								"https://www.callutheran.edu/offices/marketing/brand/email/images/VET-NET-ALLY.png",
 							name: "VET NET Ally",
-							description: "VET NET Ally trainings create a welcoming and supportive campus environment for military services members and veterans.",
-							link: "https://www.callutheran.edu/veterans/resources/vet-net-ally.html"
+							description:
+								"VET NET Ally trainings create a welcoming and supportive campus environment for military services members and veterans.",
+							link:
+								"https://www.callutheran.edu/veterans/resources/vet-net-ally.html"
 						},
 						safe_zone: {
 							img:
 								"https://www.callutheran.edu/offices/marketing/brand/email/images/Safe-Zone.png",
 							name: "Safe Zone",
-							description: "Safe Zone Ally trainings create an atmosphere of support for the LGBTQIA community on campus.",
-							link: "https://www.callutheran.edu/students/counseling/safe-zone.html"
+							description:
+								"Safe Zone Ally trainings create an atmosphere of support for the LGBTQIA community on campus.",
+							link:
+								"https://www.callutheran.edu/students/counseling/safe-zone.html"
 						}
 					}
 				}

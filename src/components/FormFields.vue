@@ -101,11 +101,24 @@
 		<fieldset name="badges-info">
 			<legend>Badges</legend>
 
-			<p>To continue serving and meeting our students’ needs, Cal Lutheran faculty and staff members can receive training to become official allies for some of our most vulnerable students. Read more on each badge about how to become an ally.</p>
+			<p>To continue serving and meeting our students’ needs, Cal Lutheran faculty and staff members can receive training to become official allies for some of our most vulnerable students.</p>
 
-			<template v-for="(badge,key) in formData.badges">
-				<Badges :badge="badge" :key="key"></Badges>
-			</template>
+			<p>Have you received campus ally training?</p>
+
+			<div class="form-item">
+				<label for="badges-toggle-yes">Yes</label> <input v-model="formData.badges_display" id="badges-toggle-yes" type="radio" name="badges-toggle" value="true" />
+			</div>
+
+			<div class="form-item">
+				<label for="badges-toggle-no">No</label> <input v-model="formData.badges_display" id="badges-toggle-no" type="radio" name="badges-toggle" value="false" />
+			</div>
+
+			<div class="badges" v-if="formData.badges_display">
+				<template v-for="(badge,key) in formData.badges">
+					<Badges :badge="badge" :key="key"></Badges>
+				</template>
+			</div>
+
 		</fieldset>
 		
 	</form>

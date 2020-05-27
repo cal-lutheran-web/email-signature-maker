@@ -1,6 +1,6 @@
 <template>
 	<div class="form-item form-item-img">
-		<input :id="this.$vnode.key" v-model="badge.display" type="checkbox" />
+		<input :id="this.$vnode.key" v-model="badge.display" type="checkbox" v-if="formData" />
 		
 		<label :for="this.$vnode.key" :class="{ checked : badge.display }">
 			<span class="sr-only">{{ badge.name }}</span>
