@@ -103,13 +103,13 @@
 
 			<p>To continue serving and meeting our students’ needs, Cal Lutheran faculty and staff members can receive training to become official allies for some of our most vulnerable students.</p>
 
-			<p>Have you received campus ally training?</p>
+			<p><strong>Have you received campus ally training?</strong></p>
 
-			<div class="form-item">
+			<div class="form-item form-item-inline">
 				<label for="badges-toggle-yes">Yes</label> <input v-model="formData.badges_display" id="badges-toggle-yes" type="radio" :value="true" />
 			</div>
 
-			<div class="form-item">
+			<div class="form-item form-item-inline">
 				<label for="badges-toggle-no">No</label> <input v-model="formData.badges_display" id="badges-toggle-no" type="radio" :value="false" />
 			</div>
 

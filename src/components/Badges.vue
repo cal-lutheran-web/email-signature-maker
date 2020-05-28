@@ -36,6 +36,10 @@
 		align-items: center;
 	}
 
+	.form-item-img input:disabled + label {
+		cursor: default;
+	}
+
 	.form-item-img label img {
 		opacity: 0.75;
 		margin: auto;
