@@ -63,7 +63,7 @@
 						},
 						youtube: {
 							name: "YouTube",
-							url: "https://youtube.com/callutheran",
+							url: "https://www.youtube.com/user/callutheran",
 							img:
 								"https://www.callutheran.edu/offices/marketing/brand/email/images/youtube.png"
 						},
